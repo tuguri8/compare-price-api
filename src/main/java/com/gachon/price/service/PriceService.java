@@ -34,7 +34,7 @@ public class PriceService {
         this.priceRepository = priceRepository;
     }
 
-    @Scheduled(cron = "45 15 2 * * *")
+    @Scheduled(cron = "0 1 * * * *")
     @CacheEvict(value = "priceList", allEntries = true)
     public void getPriceBatch() {
         CouraitResponse getAllPurchaseResponse = couraitClient.getAllPurchaseList();
